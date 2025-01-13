@@ -45,3 +45,29 @@ export const processVehicleTypeData = (data) => {
 
   return vehicleTypeCounts;
 };
+
+export const processElectricVehicleTypeData = (data) => {
+  const vehicleTypeCounts = {};
+
+  data.forEach((item) => {
+    const type = item['Electric Vehicle Type'];
+    if (type) {
+      vehicleTypeCounts[type] = (vehicleTypeCounts[type] || 0) + 1;
+    }
+  });
+
+  return vehicleTypeCounts;
+};
+
+export const processCountry = (data) => {
+  const vehicleTypeCounts = {};
+
+  data.forEach((item) => {
+    const type = item['Country'];
+    if (type) {
+      vehicleTypeCounts[type] = (vehicleTypeCounts[type] || 0) + 1;
+    }
+  });
+
+  return vehicleTypeCounts;
+};
