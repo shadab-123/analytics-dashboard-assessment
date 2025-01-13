@@ -31,3 +31,17 @@ export const processYearData = (data) => {
   });
   return result;
 };
+
+
+export const processVehicleTypeData = (data) => {
+  const vehicleTypeCounts = {};
+
+  data.forEach((item) => {
+    const type = item['Vehicle Type'];
+    if (type) {
+      vehicleTypeCounts[type] = (vehicleTypeCounts[type] || 0) + 1;
+    }
+  });
+
+  return vehicleTypeCounts;
+};
